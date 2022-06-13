@@ -1,0 +1,7 @@
+node_modules
+dist
+npm-debug
+yarn-error.log
+yarn.lock
+.git
+.next
