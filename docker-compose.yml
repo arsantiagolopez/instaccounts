@@ -1,0 +1,56 @@
+version: "3.9"
+
+services:
+  database:
+    container_name: database
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: instaccounts
+    volumes:
+      - ./packages/server/src/db/data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+    restart: always
+    networks:
+      - database
+
+  server:
+    container_name: server
+    build:
+      context: ./packages/server
+      dockerfile: Dockerfile
+    volumes:
+      - ./packages/server/node_modules:/app/node_modules
+      - ./packages/server/src:/app/src
+    depends_on:
+      - database
+    ports:
+      - 1000:1000
+    restart: always
+    networks:
+      - database
+      - webapp
+
+  web:
+    container_name: web
+    build:
+      context: ./packages/web
+      dockerfile: Dockerfile
+    volumes:
+      - ./packages/web/node_modules:/app/node_modules
+      - ./packages/web/src:/app/src
+      - ./packages/web/public:/app/public
+    ports:
+      - 2000:2000
+    restart: always
+    networks:
+      - database
+      - webapp
+
+networks:
+  webapp:
+    driver: bridge
+  database:
+    driver: bridge
