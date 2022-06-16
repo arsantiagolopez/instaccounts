@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from 'src/auth/auth.module';
 import { Session } from 'src/auth/entities';
+import { BotGateway } from 'src/bot/bot.gateway';
 import { BotModule } from 'src/bot/bot.module';
 import { InstagramModule } from 'src/instagram/instagram.module';
 import { PostModule } from 'src/post/post.module';
@@ -21,6 +22,6 @@ import { App } from './entities';
     PostModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, BotGateway],
 })
 export class AppModule {}

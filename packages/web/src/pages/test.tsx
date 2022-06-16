@@ -8,7 +8,8 @@ interface Props {}
 const TestPage: NextPage<Props> = () => {
   const handleClick = async () => {
     const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/instagrams/test`
+      `${process.env.NEXT_PUBLIC_API_URL}/bots/test`,
+      { hashtags: [], competitors: [], locations: [] }
     );
 
     console.log(response);

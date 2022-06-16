@@ -19,4 +19,5 @@ export type ProtectedPage<Props> = NextPage<Props> & { isProtected?: boolean };
 
 export type AccountsWithPosts = Record<string, PictureAndPosts>;
 
+export * from "./Bot";
 export type { User, Session, Instagram, Account, Post, App };

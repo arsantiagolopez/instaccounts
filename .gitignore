@@ -21,3 +21,6 @@ yarn-error.log*
 **/dist/
 .vercel
 **/ormconfig.json
+
+# Local instagram profiles
+packages/web/public/accounts/*

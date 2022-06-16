@@ -1,9 +1,12 @@
+import { Preferences } from 'src/bot/entities';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
   ManyToOne,
   OneToMany,
+  OneToOne,
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -63,4 +66,8 @@ export class Instagram {
 
   @OneToMany(() => Post, (post) => post.instagram)
   posts!: Post[];
+
+  @OneToOne(() => Preferences, (preferences) => preferences.instagram)
+  @JoinColumn()
+  preferences!: Preferences;
 }

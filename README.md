@@ -43,15 +43,19 @@
 
 - Manage multiple instagram accounts.
 - See all your accounts' feed on one page.
+- Bypass Instagram's CORS policy and download all your posts locally.
 - Preview what your feed would look like if you were to add new posts.
 - Run the InstaPy bot on you instagram accounts to grow your following.
 - Like, comment, follow, unfollow a custom target audience.
-- Set a schedule for when you want the bot to run.
 - Set hourly, daily or weekly interaction limits to prevent bot detections.
-- Customize your engagement strategies and set the times they run.
+- Interact with popular hashtags.
+- Interact with other user's followers.
+- Interact with users from specific locations.
+- Interact with user's followers, commenters or post likers.
 - Create separate libraries and integrate them as "Apps." Apps work as plugins or addons that magnify the power of Instaccounts.
 - Display your profile feed as is seen by the public.
 - Google OAuth & magic link authentication.
+- Manipulate local Node.js python files with fs and your custom inputs.
 - Instagram UI components.
 
 <h2 id="tech">‎‍💻 Tech Stack</h2>

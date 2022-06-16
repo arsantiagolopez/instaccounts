@@ -3,6 +3,7 @@
 // Entity typings will include added fields/relations
 
 import { AccountEntity, SessionEntity, UserEntity } from "../entities";
+import { Preferences } from "./Bot";
 
 export interface User extends UserEntity {
   instagrams: Instagram[];
@@ -29,6 +30,7 @@ export interface Instagram {
   userId?: string;
   user?: User;
   posts: Post[];
+  preferences: Preferences;
 }
 
 export interface Post {

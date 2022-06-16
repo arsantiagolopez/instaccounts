@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import * as argon2 from 'argon2';
 import { ChildProcessWithoutNullStreams, spawn } from 'child_process';
 import * as fs from 'fs';
+import { Preferences } from 'src/bot/entities';
 import { RequestWithUserId } from 'src/common/interfaces';
 import { PublicInstagram } from 'src/common/interfaces/instagram';
 import { PostService } from 'src/post/post.service';
@@ -16,6 +17,9 @@ export class InstagramService {
   constructor(
     @InjectRepository(Instagram)
     private instagramRepository: Repository<Instagram>,
+    @InjectRepository(Preferences)
+    private preferencesRepository: Repository<Preferences>,
+    // private botService: BotService,
     private postService: PostService,
   ) {}
 
@@ -43,15 +47,30 @@ export class InstagramService {
     // Hash password
     password = await argon2.hash(password);
 
+    // Create preferences
+    const preferences = this.preferencesRepository.create({
+      hashtags: [] as unknown as string,
+      competitors: [] as unknown as string,
+      locations: [] as unknown as string,
+      username,
+    });
+
+    await this.preferencesRepository.save(preferences);
+
     const instagram = this.instagramRepository.create({
       ...addInstagramDto,
       username,
       password,
       userId,
+      preferences,
       lastActive: new Date(),
     });
-    const { password: _, ...publicProfile } =
-      await this.instagramRepository.save(instagram);
+
+    const {
+      password: _,
+      preferences: __,
+      ...publicProfile
+    } = await this.instagramRepository.save(instagram);
 
     return publicProfile;
   }
@@ -367,8 +386,6 @@ export class InstagramService {
   async test(): Promise<any> {
     let username = 'lifeingodmode';
     let success = true;
-
-    console.log('****************\n\nIM IN HERE\n\n', username);
 
     // Download profile
     const script: ChildProcessWithoutNullStreams = spawn(
