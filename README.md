@@ -207,6 +207,7 @@ Instaccounts came out of my need to manage multiple accounts and grow them with 
 - Document API with Swagger.
 - Logging.
 - Display live terminal logs on the client.
+- Create an npm package and use it in application.
 - Next.js 12 new features.
 - Unit testing with Jest.
 - Handle large sets of data.

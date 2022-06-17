@@ -211,6 +211,9 @@ const styles: StyleProps = {
   delete: {
     color: "red.400",
     marginRight: "1",
+    _hover: {
+      cursor: "pointer",
+    },
   },
   spinner: {
     color: "gray.800",
