@@ -1,11 +1,19 @@
 import { Flex, Text } from "@chakra-ui/react";
-import React, { FC, useEffect, useState } from "react";
+import React, {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import { StyleProps } from "../../../../types";
 import { useSocket } from "../../../../utils/useSocket";
 
-interface Props {}
+interface Props {
+  setIsRunning: Dispatch<SetStateAction<boolean>>;
+}
 
-const Logs: FC<Props> = () => {
+const Logs: FC<Props> = ({ setIsRunning }) => {
   const [logs, setLogs] = useState<string[]>([]);
 
   const { socket } = useSocket();
@@ -14,6 +22,11 @@ const Logs: FC<Props> = () => {
     if (socket) {
       // Listen to incoming logs
       const logListener = (log: string) => {
+        // Listen for the keyword "Bot paused" & pause accordingly
+        if (log.includes("Bot paused")) {
+          setIsRunning(false);
+        }
+
         setLogs((logs) => [log, ...logs]);
       };
 
@@ -49,8 +62,8 @@ const styles: StyleProps = {
     marginY: "1em",
     paddingY: "0.25rem",
     borderRadius: "md",
-    border: { base: "none", md: "1px solid" },
-    borderColor: { base: "none", md: "gray.200" },
+    border: "1px solid",
+    borderColor: "gray.200",
     height: "100%",
     minHeight: "70vh",
     maxHeight: "70vh",

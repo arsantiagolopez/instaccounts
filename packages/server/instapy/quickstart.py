@@ -19,10 +19,10 @@ session = InstaPy()
 ############################################################
 
 # Hashtags to interact with
-hashtags = ['adinross']
+hashtags = []
 
 # Competitors whose followers you want to interact with
-competitors = ['adinross']
+competitors = []
 
 # Locations you want to interact with
 locations = []

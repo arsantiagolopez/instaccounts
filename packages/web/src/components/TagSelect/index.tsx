@@ -80,7 +80,7 @@ const styles: StylesConfig<MyOptionType, IsMulti> = {
   container: (provided) => ({
     ...provided,
     padding: 0,
-    width: "20vw",
+    width: "100%",
   }),
   control: (provided, state) => ({
     ...provided,

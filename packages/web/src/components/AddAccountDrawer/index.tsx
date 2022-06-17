@@ -50,6 +50,7 @@ const AddAccountDrawer: FC<Props> = ({ children, accounts, mutate }) => {
 
     if (error) {
       showToast({ status: "error", title: error });
+      mutate(accounts);
       return !success;
     }
 

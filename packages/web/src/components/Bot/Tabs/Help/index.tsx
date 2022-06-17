@@ -96,6 +96,7 @@ const styles: StyleProps = {
     width: "100%",
     fontSize: "sm",
     letterSpacing: "tight",
+    height: { base: "calc(100vh - 8em)", md: "80vh" },
   },
   accordion: {
     width: "100%",
@@ -115,14 +116,13 @@ const styles: StyleProps = {
   },
   panel: {
     width: "100%",
-    maxWidth: "33vw",
+    maxWidth: { base: "100vw", md: "33vw" },
     pb: 4,
   },
   text: {
-    color: "gray.500",
-    fontSize: "sm",
-    fontWeight: 500,
-    lineHeight: "1.2rem",
+    color: "base",
+    fontSize: { base: "md", md: "sm" },
+    lineHeight: { base: "base", md: "1.2rem" },
   },
   externalLink: {
     color: "blue.400",

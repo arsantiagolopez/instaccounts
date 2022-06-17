@@ -122,7 +122,7 @@ const Preferences: FC<Props> = ({ handleNavigation }) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Account */}
         <Flex {...styles.field}>
-          <Flex {...styles.left}>
+          <Flex {...styles.left} width={{ base: "auto", md: "25%" }}>
             <Avatar src={active?.image} {...styles.avatar} />
           </Flex>
           <Flex {...styles.instagram}>
@@ -134,7 +134,7 @@ const Preferences: FC<Props> = ({ handleNavigation }) => {
         </Flex>
 
         {/* Hashtags */}
-        <Flex {...styles.field}>
+        <Flex {...styles.field} {...styles.mobile}>
           <Flex {...styles.left}>
             <Text {...styles.heading}>Hashtags</Text>
           </Flex>
@@ -146,7 +146,7 @@ const Preferences: FC<Props> = ({ handleNavigation }) => {
         </Flex>
 
         {/* Competitors */}
-        <Flex {...styles.field}>
+        <Flex {...styles.field} {...styles.mobile}>
           <Flex {...styles.left}>
             <Text {...styles.heading}>Competitors</Text>
           </Flex>
@@ -161,7 +161,7 @@ const Preferences: FC<Props> = ({ handleNavigation }) => {
         </Flex>
 
         {/* Locations */}
-        <Flex {...styles.field}>
+        <Flex {...styles.field} {...styles.mobile}>
           <Flex {...styles.left}>
             <Text {...styles.heading}>Locations</Text>
           </Flex>
@@ -199,11 +199,15 @@ const Preferences: FC<Props> = ({ handleNavigation }) => {
                 type="submit"
                 disabled={isLoading}
                 {...styles.pulseAnimation}
+                {...styles.button}
               >
                 Save changes
               </Button>
             ) : (
-              <Button onClick={() => handleNavigation("status")}>
+              <Button
+                onClick={() => handleNavigation("status")}
+                {...styles.button}
+              >
                 Run the bot
               </Button>
             )}
@@ -222,7 +226,7 @@ const styles: StyleProps = {
   wrapper: {
     position: "relative",
     direction: "column",
-    height: "80vh",
+    height: { base: "calc(100vh - 8em)", md: "80vh" },
   },
   field: {
     direction: "row",
@@ -230,18 +234,21 @@ const styles: StyleProps = {
     paddingY: "0.5rem",
   },
   left: {
-    width: "25%",
-    justifyContent: "right",
-    paddingRight: "4%",
-    minWidth: "5rem",
+    width: { base: "100%", md: "25%" },
+    justifyContent: { base: "start", md: "right" },
+    paddingRight: { base: "0", md: "4%" },
+    minWidth: { base: "none", md: "5rem" },
+    paddingBottom: { base: "0.5rem", md: "0" },
   },
   avatar: {
-    boxSize: "2.3rem",
+    boxSize: { base: "4rem", md: "2.3rem" },
     marginY: "auto",
+    marginRight: { base: "1rem", md: "none" },
   },
   instagram: {
     direction: "column",
     letterSpacing: "-0.5px",
+    width: { base: "50%", md: "auto" },
   },
   username: {
     fontSize: "xl",
@@ -256,29 +263,33 @@ const styles: StyleProps = {
     marginTop: "-0.25rem",
     cursor: "pointer",
   },
+  mobile: {
+    direction: { base: "column", md: "row" },
+  },
   heading: {
     fontWeight: "bold",
     letterSpacing: "-0.5px",
     paddingTop: "0.3rem",
+    fontSize: { base: "lg", md: "md" },
   },
   right: {
     direction: "column",
-    maxWidth: "18rem",
+    maxWidth: { base: "100%", md: "18rem" },
+    width: "100%",
   },
   helperHeading: {
     color: "gray.400",
-    fontSize: "9pt",
+    fontSize: { base: "base", md: "9pt" },
     fontWeight: "bold",
     letterSpacing: "tight",
     paddingTop: "0.5rem",
   },
   helper: {
     color: "gray.400",
-    fontSize: "9pt",
-    fontWeight: "500",
+    fontSize: { base: "base", md: "9pt" },
     letterSpacing: "tight",
     paddingTop: "0.25rem",
-    lineHeight: "1rem",
+    lineHeight: { base: "1.25rem", md: "1.1rem" },
   },
   externalLink: {
     color: "blue.400",
@@ -286,10 +297,14 @@ const styles: StyleProps = {
   },
   fixed: {
     position: "absolute",
-    left: "max(5rem, 25%)",
+    left: { base: "auto", md: "max(5rem, 25%)" },
     bottom: "2em",
   },
   pulseAnimation: {
     animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+  },
+  button: {
+    width: "auto",
+    paddingY: { base: "1.25rem", md: "0" },
   },
 };

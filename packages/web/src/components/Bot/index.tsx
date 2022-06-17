@@ -1,14 +1,18 @@
 import {
   Flex,
+  Icon,
   Tab,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
+  Text,
 } from "@chakra-ui/react";
 import React, { FC, useState } from "react";
+import { IoChevronBackSharp } from "react-icons/io5";
 import { StyleProps } from "../../types";
 import { useAccounts } from "../../utils/useAccounts";
+import { NavigationDrawer } from "./NavigationDrawer";
 import { Help, Preferences, Status } from "./Tabs";
 
 interface Props {}
@@ -49,12 +53,28 @@ const Bot: FC<Props> = () => {
     },
   ];
 
+  const activeTabName = tabs[tabIndex].label;
+
+  const navigationDrawerProps = { tabs, tabIndex, handleNavigation };
+
   if (!active) {
     return <Flex {...styles.wrapper}>Test</Flex>;
   }
 
   return (
     <Flex {...styles.wrapper}>
+      {/* Mobile Navigation */}
+
+      <NavigationDrawer
+        Trigger={
+          <Flex {...styles.navigation}>
+            <Icon as={IoChevronBackSharp} {...styles.icon} />
+            <Text {...styles.title}>{activeTabName}</Text>
+          </Flex>
+        }
+        {...navigationDrawerProps}
+      />
+
       <Tabs
         index={tabIndex}
         onChange={(index) => setTabIndex(index)}
@@ -103,6 +123,7 @@ const styles: StyleProps = {
     variant: "unstyled",
   },
   list: {
+    display: { base: "none", md: "block" },
     borderRight: { base: "none", md: "1px solid" },
     borderRightColor: { base: "none", md: "gray.200" },
     height: "85vh",
@@ -134,4 +155,21 @@ const styles: StyleProps = {
   },
   panels: {},
   panel: {},
+  // Mobile styles
+  navigation: {
+    display: { base: "flex", md: "none" },
+    position: "relative",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "0.3rem",
+  },
+  title: {
+    fontWeight: "semibold",
+    fontSize: "lg",
+  },
+  icon: {
+    position: "absolute",
+    left: "0.5rem",
+    fontSize: "1rem",
+  },
 };

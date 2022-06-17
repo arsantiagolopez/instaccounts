@@ -29,9 +29,8 @@ const Status: FC<Props> = () => {
 
     if (error) {
       showToast({ status: "error", title: error });
+      setIsRunning(false);
     }
-
-    setIsRunning(false);
   };
 
   const getPasswordConfirmation = () =>
@@ -47,13 +46,12 @@ const Status: FC<Props> = () => {
     }
   }, [password]);
 
-  useEffect(() => {}, []);
-
   const passwordConfirmationModalProps = {
     isOpen,
     onClose,
     setPassword,
   };
+  const logsProps = { setIsRunning };
 
   return (
     <Flex {...styles.wrapper}>
@@ -80,8 +78,7 @@ const Status: FC<Props> = () => {
       </Flex>
 
       {/* Console */}
-      {/* {isRunning && <Logs />} */}
-      <Logs />
+      {isRunning && <Logs {...logsProps} />}
     </Flex>
   );
 };
