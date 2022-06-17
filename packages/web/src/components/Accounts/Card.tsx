@@ -67,6 +67,16 @@ const Card: FC<Props> = ({
       `${process.env.NEXT_PUBLIC_API_URL}/instagrams/active/${id}`
     );
     setActiveId(data?.id);
+
+    const updatedAccounts = accounts?.map((account) => {
+      const { id, lastActive } = account;
+      if (id === data?.id) {
+        return { ...account, lastActive };
+      }
+      return account;
+    });
+    // @ts-ignore
+    mutate(updatedAccounts);
   };
 
   // Set item to hovered
