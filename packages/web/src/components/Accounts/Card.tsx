@@ -178,6 +178,7 @@ const styles: StyleProps = {
     paddingX: { base: "2em", md: "2vw" },
     _hover: {
       background: "gray.100",
+      cursor: "pointer",
     },
   },
   aspect: {

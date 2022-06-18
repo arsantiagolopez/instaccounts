@@ -58,13 +58,12 @@ const Bot: FC<Props> = () => {
   const navigationDrawerProps = { tabs, tabIndex, handleNavigation };
 
   if (!active) {
-    return <Flex {...styles.wrapper}>Test</Flex>;
+    return <Flex {...styles.wrapper}></Flex>;
   }
 
   return (
     <Flex {...styles.wrapper}>
       {/* Mobile Navigation */}
-
       <NavigationDrawer
         Trigger={
           <Flex {...styles.navigation}>

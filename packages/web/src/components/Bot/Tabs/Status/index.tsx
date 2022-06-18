@@ -93,6 +93,7 @@ const styles: StyleProps = {
     padding: "0.5rem",
     height: "100%",
     maxWidth: "100%",
+    minHeight: { base: "80vh", md: "70vh" },
   },
   status: {
     direction: "row",

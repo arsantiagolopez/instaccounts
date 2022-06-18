@@ -19,13 +19,13 @@ session = InstaPy()
 ############################################################
 
 # Hashtags to interact with
-hashtags = []
+hashtags = ['developer', 'programmer', 'typescript']
 
 # Competitors whose followers you want to interact with
-competitors = []
+competitors = ['academind', 'benawad', 'codeacademy', 'fireship']
 
 # Locations you want to interact with
-locations = []
+locations = ['1939771852939956/downtown-austin']
 
 ############################################################
 ############################################################

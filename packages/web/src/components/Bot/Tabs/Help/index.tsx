@@ -61,7 +61,7 @@ const Help: FC<Props> = () => {
           </AccordionButton>
           <AccordionPanel {...styles.panel}>
             <Text {...styles.text}>
-              - Find locations from this{" "}
+              • Find locations from this{" "}
               <Link
                 href="https://www.instagram.com/explore/locations/"
                 isExternal
@@ -70,12 +70,12 @@ const Help: FC<Props> = () => {
                 link
               </Link>
               .
-              <br />- Find the location you want and get the URL link in the
+              <br />• Find the location you want and get the URL link in the
               format:{" "}
               https://www.instagram.com/explore/locations/1939771852939956/downtown-austin/
-              <br />- Extract everything after{" "}
+              <br />• Extract everything after{" "}
               <span style={styles.bold}>'locations/'</span> or just the number.
-              <br />- E.g. From the link above, you'd extract{" "}
+              <br />• E.g. From the link above, you'd extract{" "}
               <span style={styles.bold}>
                 1939771852939956/downtown-austin
               </span>{" "}
