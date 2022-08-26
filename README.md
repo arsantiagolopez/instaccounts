@@ -1,7 +1,7 @@
 <div align="center">
     <img src="https://i.ibb.co/qCnvKG8/logo.png" />
     <a href="https://tryflavors.com" style="color: #303030;"><h1>Instaccounts</h1></a>
-    <h4>Instaccounts is a solution to organically grow your instagram. Manage multiple accounts, interact with target audiences, preview posts, and much more.</h4>
+    <h4>Instaccounts is the Swiss Army knife of social media management. It offers key tools to help you stay organized as you organically grow your Instagram presence, such as managing multiple accounts, curating future posts, interacting with target audiences, and much more.  </h4>
 </div>
 
 <div align="center">
@@ -41,19 +41,19 @@
 
 <h2 id="features">🎯 Features</h2>
 
-- Manage multiple instagram accounts.
-- See all your accounts' feed on one page.
+- Manage multiple Instagram accounts.
+- View multiple account feeds in one page.
 - Bypass Instagram's CORS policy and download all your posts locally.
-- Preview what your feed would look like if you were to add new posts.
-- Run the InstaPy bot on you instagram accounts to grow your following.
-- Like, comment, follow, unfollow a custom target audience.
+- Plan and preview new posts based on desired, cohesive feed aesthetic.
+- Run the InstaPy bot on you Instagram accounts to grow your following.
+- Like, comment, follow and unfollow custom target audiences.
 - Set hourly, daily or weekly interaction limits to prevent bot detections.
 - Interact with popular hashtags.
-- Interact with other user's followers.
+- Interact with other users' followers.
 - Interact with users from specific locations.
-- Interact with user's followers, commenters or post likers.
+- Interact with users' followers, commenters or post likers.
 - Create separate libraries and integrate them as "Apps." Apps work as plugins or addons that magnify the power of Instaccounts.
-- Display your profile feed as is seen by the public.
+- Display your profile feed as seen by the public.
 - Google OAuth & magic link authentication.
 - Manipulate local Node.js python files with fs and your custom inputs.
 - Instagram UI components.
@@ -73,11 +73,11 @@
   </tr>
   <tr>
       <td><a href="https://reactjs.org/">React</a></td>
-      <td>To build a component based user interface.</td>
+      <td>Build a component-based user interface.</td>
   </tr>
   <tr>
       <td><a href="https://nextjs.org/">Next.js</a></td>
-      <td>Server side rendering (SSR) of React components.</td>
+      <td>Server-side rendering (SSR) of React components.</td>
   </tr>
     <tr>
       <td><a href="https://react-hook-form.com/">React Hook Form</a></td>
@@ -89,7 +89,7 @@
   </tr>
     <tr>
       <td><a href="https://virtuoso.dev/">React Virtuoso</a></td>
-      <td>Efficiently render huge data sets.</td>
+      <td>Efficiently render large data sets.</td>
     </tr>
   <tr>
       <td><a href="https://swr.vercel.app/">SWR</a></td>
@@ -97,7 +97,7 @@
   </tr>
   <tr>
       <td><a href="https://axios-http.com/docs/intro" >Axios</a></td>
-      <td>HTTP promise based data fetching requests.</td>
+      <td>HTTP promise-based data fetching requests.</td>
   </tr>
   <tr>
       <td><a href="https://momentjs.com/">Moment.js</a></td>
@@ -146,7 +146,7 @@
     </tr>
     <tr>
         <td><a href="https://github.com/InstaPy/InstaPy">InstaPy</a></td>
-        <td>Automate your instagram accounts to get real engagement.</td>
+        <td>Automate your Instagram accounts to get real engagement.</td>
     </tr>
     <tr>
         <td><a href="https://instaloader.github.io/">Instaloader</a></td>
@@ -154,7 +154,7 @@
     </tr>
     <tr>
         <td><a href="https://swagger.io/tools/swagger-ui/">Swagger UI</a></td>
-        <td>Beautifully document your API.</td>
+        <td>Neatly document your API.</td>
     </tr>
     <tr>
         <td><a href="https://next-auth.js.org/">NextAuth.js</a></td>
@@ -166,7 +166,7 @@
     </tr>
      <tr>
       <td><a href="https://axios-http.com/docs/intro" >Axios</a></td>
-      <td>Fetch data with promise based HTTP requests.</td>
+      <td>Fetch data with promise-based HTTP requests.</td>
   </tr>
     <tr>
         <td>REST API</td>
@@ -193,11 +193,11 @@
 
 <h2 id="inspiration">💡 Inspiration</h2>
 
-One skill that I want to master in the age of social media is organic growth and engagement. To influence as many people as possible with the help of programming.
+In the ever-changing age of social media, I want to master organic growth and engagement facilitated by programming.
 
-During my time as a Python developer, I messed around with automation and found a library I loved: InstaPy. InstaPy is a highly customizable tool that automates your instagram accounts and generates organic engagement. It's a great tool to grow your social media following, but as of now it's only accessible to people that know python.
+During my time as a Python developer, I tinkered with automation and found a library I loved: InstaPy. InstaPy is a highly customizable tool that automates your Instagram accounts and generates organic engagement. It's a useful tool to grow your social media following, but as of now, it's only accessible to people that know Python.
 
-Instaccounts came out of my need to manage multiple accounts and grow them with the help of InstaPy. I also thought it'd be great to replicate Instagram's UI to maintain familiarity, speed up development, and practice conventional industry standards.
+Instaccounts came out of my personal need to manage multiple accounts and grow them with the help of InstaPy. I also sought to replicate Instagram's UI to maintain familiarity, speed up development, and practice conventional industry standards.
 
 <h2 id="objectives">🚀 Learning Objectives</h2>
 
@@ -211,7 +211,7 @@ Instaccounts came out of my need to manage multiple accounts and grow them with 
 - Next.js 12 new features.
 - Unit testing with Jest.
 - Handle large sets of data.
-- Replicate a popular social media's UI.
+- Replicate a popular social media platform's UI.
 - Build a stronger structure foundation for scalable applications.
 
 <h2 id="license">📜 License</h2>
